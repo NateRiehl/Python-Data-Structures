@@ -2,7 +2,6 @@
 from LinkNode import LinkNode
 
 class LinkedList:
-	statictest = 'foobar'
 	def __init__(self):
 		self.head = None
 		self.size = 0

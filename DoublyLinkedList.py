@@ -52,6 +52,7 @@ class DoublyLinkedList(LinkedList):
 			current = current.next
 		return list
 		
+	# To string backwards
 	def str_backwards(self):
 		current = self.tail
 		list = ""
