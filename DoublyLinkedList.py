@@ -15,11 +15,8 @@ class DoublyLinkedList(LinkedList):
 			self.head = new_node
 			self.tail = self.head
 		else:
-			current = self.head
-			while current.next != None:
-				current = current.next
-			current.next = new_node
-			new_node.previous = current
+			self.tail.next = new_node
+			new_node.previous = self.tail
 			self.tail = new_node
 			
 	# Remove first occurrence of data from DLL
@@ -53,6 +50,14 @@ class DoublyLinkedList(LinkedList):
 		while current != None:
 			list += str(current)
 			current = current.next
+		return list
+		
+	def str_backwards(self):
+		current = self.tail
+		list = ""
+		while current != None:
+			list += str(current)
+			current = current.previous
 		return list
 			
 		
