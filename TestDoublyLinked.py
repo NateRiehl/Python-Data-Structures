@@ -1,0 +1,15 @@
+# Test cases for Doubly-Linked List
+from DoublyLinkedList import DoublyLinkedList
+dlist = DoublyLinkedList()
+dlist.add(1)
+print(str(dlist))
+dlist.add(2)
+print(dlist.__str__())
+dlist.add(3)
+print(dlist.__str__())
+dlist.remove(2)
+print(dlist.__str__())
+dlist.remove(3)
+print(dlist.__str__())
+dlist.remove(1)
+print(dlist.__str__())

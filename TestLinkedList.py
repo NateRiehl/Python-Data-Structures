@@ -1,0 +1,20 @@
+from LinkedList import LinkedList
+
+# Test cases for LinkedList
+linklist = LinkedList()
+linklist2 = LinkedList()
+linklist.add(1)
+print(linklist.__str__())
+linklist.add(2)
+print(linklist.__str__())
+linklist.add(3)
+print(linklist.__str__())
+linklist.add(4)
+print(linklist.__str__())
+linklist.remove(2)
+print(linklist.__str__())
+linklist.remove(1)
+linklist.remove(6)
+linklist.get(1)
+print(linklist.__str__())
+print(linklist.size)
