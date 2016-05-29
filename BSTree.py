@@ -51,8 +51,7 @@ class BSTree:
 					parent_node = node
 					node = node.right_child	
 			if node is None: # Data is not in tree
-				return False
-			
+				return None
 			elif node.is_leaf():# Data is in a leaf node so simply Nullify reference to it
 				if parent_node.data > node.data:
 					parent_node.left_child = None
@@ -93,18 +92,19 @@ class BSTree:
 	# Helper method for remove()
 	# Returns max from left subtree
 	def get_max_left_subtree(self, node):
-		parent = node
+		parent = None
 		while node.right_child != None:
 			parent = node
 			node = node.right_child
 		data = node.data
-		parent.right_child = node.left_child
+		if parent is not None:
+			parent.right_child = node.left_child		
 		return data
 	
 	# Recursive contains method 
 	# Returns if data is contained in node
 	def contains(self, data):
-		return contains(self.root, data)
+		return self.contains(self.root, data)
 	
 	def contains(self, node, data):
 		if node == None:
@@ -138,6 +138,19 @@ class BSTree:
 			order = self.in_order(node.left_child) + str(node.data) + " " + self.in_order(node.right_child)
 		return order
 		
+	# pre-order traversal of BST
+	def pre_order(self, node):
+		order = ""
+		if node is not None:
+			order =  str(node.data) + " " + self.pre_order(node.left_child) + self.pre_order(node.right_child)
+		return order
+	
+	# post-order traversal of BST
+	def post_order(self, node):
+		order = ""
+		if node is not None:
+			order = self.post_order(node.left_child) + self.post_order(node.right_child) + str(node.data) + " " 
+		return order
 		
 			
 				
