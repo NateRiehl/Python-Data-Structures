@@ -64,7 +64,7 @@ class BSTree:
 				else:
 					parent_node.right_child = None
 			elif node.left_child != None: # Data is in internal node with left child
-				if node.right_child != None: # Also has right child
+				if node.left_child.right_child != None: # left child has right child
 					node.data = self.get_max_left_subtree(node.left_child) # Replace data with max from left subtree
 				else: # Target node only has left child, skip over it (Similar to Linked List removal Alg)
 					node.data = node.left_child.data
