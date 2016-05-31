@@ -102,19 +102,16 @@ class BSTree:
 		return data
 	
 	# Recursive contains method 
-	# Returns if data is contained in node
-	def contains(self, data):
-		return self.contains(self.root, data)
-	
+	# Returns if data is contained in node	
 	def contains(self, node, data):
 		if node == None:
 			return False
 		if node.data == data:
 			return True
 		elif node.data > data:
-			 node.left_child
+			 return self.contains(node.left_child, data)
 		else:
-			node = node.right_child
+			 return self.contains(node.right_child, data)
 			
 	
 	#Print BST in Level-Order	
