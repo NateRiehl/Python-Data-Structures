@@ -8,8 +8,14 @@ class BSTree:
 	
 	# Returns if BST is empty
 	def is_empty(self):
-		return self.root == None
-
+		return self.root == None	
+		
+	def clear(self):
+		if self.root != None:
+			self.root.left_child = None
+			self.root.right_child = None
+			self.root = None
+		
 	#Add data to BSTree
 	def add(self, data):
 		if self.is_empty(): # Set Root
