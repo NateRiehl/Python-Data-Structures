@@ -41,6 +41,31 @@ class LinkedList:
 				return True
 			return False
 	
+	# Set data at index to new data and return old data
+	def set(self, index, data):
+		if index > self.size or index < 0:
+			return None
+		else:
+			current = self.head
+			count = 0
+			while count < index:
+				current = current.next
+				count += 1
+			temp = current.data
+			current.data = data
+			return temp
+	
+	# Returns index of element or -1 if not present
+	def index_of(self, data):
+		current = self.head
+		index = 0
+		while current != None:
+			if current.data == data:
+				return index
+			index += 1
+			current = current.next
+		return -1
+	
 	# Returns if data is contained in LL
 	def contains(self, data):
 		if self.is_empty():
